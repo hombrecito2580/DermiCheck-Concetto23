@@ -1,0 +1,23 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.MasterStack23" parent="Theme.Material3.Light.NoActionBar">
+
+        <item name="android:forceDarkAllowed">false</item>
+
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimary</item>
+        <item name="colorAccent">@color/black</item>
+
+    </style>
+
+    <style name="Theme.MasterStack23" parent="Base.Theme.MasterStack23" />
+
+    <style name="AppNameBold">
+<!--        <item name="fontFamily">@font/martian_mono</item>-->
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="ProgressBarTheme">
+        <item name="colorSecondary">@color/colorPrimaryDark</item>
+    </style>
+</resources>

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?><!--    &#8226;-->
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:fillViewport="true"
+    android:layout_margin="16dp"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".ui.DisplayDiseaseFragment">
+
+        <TextView
+            android:id="@+id/tvDisease"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="DiseaseName"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvHeadingSymptoms"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Symptoms:"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvDisease" />
+
+        <TextView
+            android:id="@+id/tvSymptoms"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="&#8226; Symptom 1\n&#8226; Symptom 2\n&#8226; Symptom 3\n&#8226; Symptom 4\n&#8226; Symptom 5"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvHeadingSymptoms" />
+
+        <TextView
+            android:id="@+id/tvHeadingTreatment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Treatment:"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvSymptoms" />
+
+        <TextView
+            android:id="@+id/tvTreatment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse error cum nulla magnam temporibus in harum perspiciatis possimus adipisci ea maxime id, dolorem distinctio blanditiis odit laborum, sit perferendis necessitatibus."
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvHeadingTreatment" />
+
+        <TextView
+            android:id="@+id/tvHeadingURL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="For more info log on to:"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvTreatment" />
+
+        <TextView
+            android:id="@+id/tvURL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:autoLink="web"
+            android:linksClickable="true"
+            android:text="http://www.britishskinfoundation.org.uk/SkinInformation/AtoZofSkindisease/"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvHeadingURL" />
+
+
+        <!--    <LinearLayout-->
+        <!--        android:layout_width="match_parent"-->
+        <!--        android:layout_height="match_parent"-->
+        <!--        android:orientation="vertical">-->
+
+        <!--        <TextView-->
+        <!--            android:id="@+id/diseasename"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:text="Disease"-->
+        <!--            android:textStyle="bold"-->
+        <!--            android:textSize="24sp"-->
+        <!--            android:textColor="@color/black"-->
+        <!--            android:layout_margin="16dp"/>-->
+
+        <!--        <TextView-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:textColor="@color/black"-->
+        <!--            android:text="Symptoms"-->
+        <!--            android:textSize="16sp"-->
+        <!--            android:layout_marginLeft="16dp"/>-->
+
+        <!--        <androidx.recyclerview.widget.RecyclerView-->
+        <!--            android:id="@+id/symptomsRV"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_margin="8dp"/>-->
+
+        <!--        <TextView-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:textSize="16dp"-->
+        <!--            android:text="Treatment"-->
+        <!--            android:layout_marginLeft="16dp"/>-->
+
+        <!--        <TextView-->
+        <!--            android:id="@+id/treatment"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginTop="8dp"-->
+        <!--            android:layout_marginLeft="16dp"-->
+        <!--            android:layout_marginRight="16dp"-->
+        <!--            android:layout_marginBottom="8dp"/>-->
+
+        <!--    </LinearLayout>-->
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
+

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/graph_login"
+    app:startDestination="@id/loginWithEmailFragment">
+
+    <fragment
+        android:id="@+id/loginWithEmailFragment"
+        android:name="com.example.masterstack23.ui.LoginWithEmailFragment"
+        tools:layout="@layout/fragment_login_with_email"
+        android:label="LoginWithEmailFragment" >
+        <action
+            android:id="@+id/action_loginWithEmailFragment_to_loginPasswordFragment"
+            app:destination="@id/loginPasswordFragment"
+            app:enterAnim="@anim/enter_anim"
+            app:exitAnim="@anim/exit_anim"
+            app:popEnterAnim="@anim/pop_enter_anim"
+            app:popExitAnim="@anim/pop_exit_anim" />
+        <action
+            android:id="@+id/action_loginWithEmailFragment_to_createAccountFragment"
+            app:destination="@id/createAccountFragment"
+            app:enterAnim="@anim/enter_anim"
+            app:exitAnim="@anim/exit_anim"
+            app:popEnterAnim="@anim/pop_enter_anim"
+            app:popExitAnim="@anim/pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/createAccountFragment"
+        android:name="com.example.masterstack23.ui.CreateAccountFragment"
+        tools:layout="@layout/fragment_create_account"
+        android:label="CreateAccountFragment" />
+    <fragment
+        android:id="@+id/loginPasswordFragment"
+        android:name="com.example.masterstack23.ui.LoginPasswordFragment"
+        tools:layout="@layout/fragment_login_password"
+        android:label="LoginPasswordFragment" >
+        <action
+            android:id="@+id/action_loginPasswordFragment_to_forgotPasswordFragment"
+            app:destination="@id/forgotPasswordFragment"
+            app:enterAnim="@anim/enter_anim"
+            app:exitAnim="@anim/exit_anim"
+            app:popEnterAnim="@anim/pop_enter_anim"
+            app:popExitAnim="@anim/pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/forgotPasswordFragment"
+        android:name="com.example.masterstack23.ui.ForgotPasswordFragment"
+        tools:layout="@layout/fragment_forgot_password"
+        android:label="ForgotPasswordFragment" />
+</navigation>

@@ -1,111 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.LoginWithEmailFragment">
+    android:fillViewport="true">
 
-    <TextView
-        android:id="@+id/appName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        style="@style/AppNameBold"
-        android:layout_marginTop="24dp"
-        android:text="@string/app_name_underline"
-        android:textSize="20sp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent" />
+    <androidx.constraintlayout.widget.ConstraintLayout
 
-    <TextView
-        android:id="@+id/loginSlogan"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Login or Register to continue"
-        android:textStyle="bold"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        android:layout_marginTop="24dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintTop_toBottomOf="@id/appName"
-        tools:ignore="HardcodedText" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/loginEMailEditTextLayout"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:hint="Email"
-        android:padding="8dp"
-        android:textColorHint="@color/black"
-        app:boxStrokeColor="@color/colorPrimary"
-        app:endIconMode="clear_text"
-        app:helperTextTextColor="#a4161a"
-        app:hintTextColor="@color/colorPrimary"
-        app:layout_constraintVertical_bias="0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/loginSlogan"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:startIconDrawable="@drawable/ic_email"
-        tools:ignore="HardcodedText">
+        tools:context=".ui.LoginWithEmailFragment">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/loginEMailEditText"
+        <TextView
+            android:id="@+id/appName"
+            style="@style/AppNameBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/app_name_underline"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/loginSlogan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Login or Register to continue"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/appName"
+            tools:ignore="HardcodedText" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/loginEMailEditTextLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textEmailAddress"
-            android:lines="1"
-            android:scrollHorizontally="true"
-            android:singleLine="true"
+            android:layout_marginTop="16dp"
+            android:hint="Email"
+            android:textColorHint="@color/black"
+            app:boxStrokeColor="@color/colorPrimary"
+            app:endIconMode="clear_text"
+            app:helperTextTextColor="#a4161a"
+            app:hintTextColor="@color/colorPrimary"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/loginSlogan"
+            app:layout_constraintVertical_bias="0"
+            app:startIconDrawable="@drawable/ic_email"
+            tools:ignore="HardcodedText">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/loginEMailEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:lines="1"
+                android:scrollHorizontally="true"
+                android:singleLine="true"
+                android:textSize="16sp"
+                tools:ignore="TextContrastCheck,VisualLintTextFieldSize" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/loginContinueButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:backgroundTint="@color/black"
+            android:text="CONTINUE"
+            android:textColor="@color/white"
             android:textSize="16sp"
-            tools:ignore="TextContrastCheck,VisualLintTextFieldSize" />
+            app:cornerRadius="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/loginEMailEditTextLayout"
+            app:layout_constraintVertical_bias="0"
+            tools:ignore="HardcodedText,VisualLintButtonSize" />
 
-    </com.google.android.material.textfield.TextInputLayout>
+        <!--    <com.google.android.material.button.MaterialButton-->
+        <!--        android:id="@+id/continueWithGoogleButton"-->
+        <!--        android:layout_width="match_parent"-->
+        <!--        android:layout_height="wrap_content"-->
+        <!--        android:layout_marginStart="8dp"-->
+        <!--        android:layout_marginEnd="8dp"-->
+        <!--        android:backgroundTint="#E7E9F0"-->
+        <!--        android:drawableEnd="@drawable/ic_google"-->
+        <!--        android:drawablePadding="8dp"-->
+        <!--        android:elevation="20dp"-->
+        <!--        android:padding="8dp"-->
+        <!--        android:text="Continue With Google"-->
+        <!--        android:textAllCaps="false"-->
+        <!--        android:textColor="@color/black"-->
+        <!--        android:textSize="16sp"-->
+        <!--        app:layout_constraintEnd_toEndOf="parent"-->
+        <!--        app:layout_constraintStart_toStartOf="parent"-->
+        <!--        tools:ignore="HardcodedText,VisualLintButtonSize"-->
+        <!--        tools:layout_editor_absoluteY="616dp" />-->
 
-    <Button
-        android:id="@+id/loginContinueButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:backgroundTint="@color/black"
-        android:padding="8dp"
-        android:text="CONTINUE"
-        android:textColor="@color/white"
-        android:textSize="16sp"
-        app:cornerRadius="12dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/loginEMailEditTextLayout"
-        app:layout_constraintVertical_bias="0"
-        tools:ignore="HardcodedText,VisualLintButtonSize" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-<!--    <com.google.android.material.button.MaterialButton-->
-<!--        android:id="@+id/continueWithGoogleButton"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginStart="8dp"-->
-<!--        android:layout_marginEnd="8dp"-->
-<!--        android:backgroundTint="#E7E9F0"-->
-<!--        android:drawableEnd="@drawable/ic_google"-->
-<!--        android:drawablePadding="8dp"-->
-<!--        android:elevation="20dp"-->
-<!--        android:padding="8dp"-->
-<!--        android:text="Continue With Google"-->
-<!--        android:textAllCaps="false"-->
-<!--        android:textColor="@color/black"-->
-<!--        android:textSize="16sp"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        tools:ignore="HardcodedText,VisualLintButtonSize"-->
-<!--        tools:layout_editor_absoluteY="616dp" />-->
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

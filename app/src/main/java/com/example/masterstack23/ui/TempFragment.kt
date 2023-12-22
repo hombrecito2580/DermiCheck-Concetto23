@@ -4,7 +4,6 @@ import android.app.Dialog
 import android.content.ActivityNotFoundException
 import android.content.Context
 import android.content.Intent
-import android.content.res.AssetManager
 import android.graphics.Bitmap
 import android.graphics.drawable.ColorDrawable
 import android.net.Uri
@@ -23,7 +22,6 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.example.masterstack23.R
 import com.example.masterstack23.databinding.FragmentTempBinding
-import com.example.masterstack23.databinding.FragmentTestBinding
 import com.example.masterstack23.repo.APIService
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.gson.Gson
@@ -32,7 +30,6 @@ import kotlinx.coroutines.launch
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
 import okhttp3.RequestBody.Companion.asRequestBody
-import org.tensorflow.lite.Interpreter
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.io.ByteArrayOutputStream
@@ -128,24 +125,24 @@ class TempFragment : Fragment() {
             bottomSheetDialog.show()
         }
 
-        binding.btnUpload.setOnClickListener {
-            if(imageUri == initialImageURI) {
-                Toast.makeText(context, "Please Select an image...", Toast.LENGTH_SHORT).show()
-            }
-            else {
-//                upload()
-                val assetManager = context?.assets
-                val modelInputStream = assetManager?.open("model.tflite")
-                val vggModelInputStream = assetManager?.open("vgg_model.tflite")
-                val modelBuffer = modelInputStream?.let { it1 -> ByteArray(it1.available()) }
-                val vggModelBuffer = vggModelInputStream?.let { it1 -> ByteArray(it1.available()) }
-                modelInputStream?.read(modelBuffer)
-                vggModelInputStream?.read(vggModelBuffer)
-                modelInputStream?.close()
-                vggModelInputStream?.close()
-
-            }
-        }
+//        binding.btnUpload.setOnClickListener {
+//            if(imageUri == initialImageURI) {
+//                Toast.makeText(context, "Please Select an image...", Toast.LENGTH_SHORT).show()
+//            }
+//            else {
+////                upload()
+//                val assetManager = context?.assets
+//                val modelInputStream = assetManager?.open("model.tflite")
+//                val vggModelInputStream = assetManager?.open("vgg_model.tflite")
+//                val modelBuffer = modelInputStream?.let { it1 -> ByteArray(it1.available()) }
+//                val vggModelBuffer = vggModelInputStream?.let { it1 -> ByteArray(it1.available()) }
+//                modelInputStream?.read(modelBuffer)
+//                vggModelInputStream?.read(vggModelBuffer)
+//                modelInputStream?.close()
+//                vggModelInputStream?.close()
+//
+//            }
+//        }
 
     }
 

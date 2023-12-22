@@ -44,28 +44,28 @@ class ForgotPasswordFragment : Fragment() {
         init()
 
         loginContinueButton.setOnClickListener {
-            email = emailEditText.text.toString().trim()
-            if (isValid(email)) {
-                var sentOTP = false
-
-                dialog.show()
-
-                runBlocking {
-                    sentOTP = sendOTP(email)
-                }
-
-                if (sentOTP) {
-                    Toast.makeText(context, "OTP Sent to email", Toast.LENGTH_SHORT).show()
-                    dialog.dismiss()
-                    val intent = activity?.intent;
-                    activity?.finish();
-                    startActivity(intent);
-                } else {
-                    Toast.makeText(context, "error!!!", Toast.LENGTH_SHORT).show()
-                }
-                dialog.dismiss()
-
-            }
+//            email = emailEditText.text.toString().trim()
+//            if (isValid(email)) {
+//                var sentOTP = false
+//
+//                dialog.show()
+//
+//                runBlocking {
+//                    sentOTP = sendOTP(email)
+//                }
+//
+//                if (sentOTP) {
+//                    Toast.makeText(context, "OTP Sent to email", Toast.LENGTH_SHORT).show()
+//                    dialog.dismiss()
+//                    val intent = activity?.intent;
+//                    activity?.finish();
+//                    startActivity(intent);
+//                } else {
+//                    Toast.makeText(context, "error!!!", Toast.LENGTH_SHORT).show()
+//                }
+//                dialog.dismiss()
+//
+//            }
         }
 
         floatingActionButton.setOnClickListener {

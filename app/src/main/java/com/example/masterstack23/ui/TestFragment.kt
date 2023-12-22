@@ -87,9 +87,14 @@ class TestFragment : Fragment() {
                 Toast.makeText(context, "Please Select an image...", Toast.LENGTH_SHORT).show()
             }
             else {
-                upload()
+//                upload()
+                processImage()
             }
         }
+
+    }
+
+    private fun processImage() {
 
     }
 

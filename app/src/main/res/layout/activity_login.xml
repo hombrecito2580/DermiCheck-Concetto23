@@ -31,6 +31,7 @@
         android:background="@drawable/shape_fragment"
         android:name="androidx.navigation.fragment.NavHostFragment"
         app:defaultNavHost="true"
+        android:padding="12dp"
         app:navGraph="@navigation/graph_login"
         app:layout_constraintHeight_percent="0.65"
         app:layout_constraintStart_toStartOf="parent"

@@ -1,7 +1,7 @@
 package com.example.masterstack23.data
 
-data class RegisterRequest(
+data class CreateAccountRequest(
     val email: String,
     val password: String,
-    val number: String
+    val userName: String
 )

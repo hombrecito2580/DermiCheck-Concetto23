@@ -9,9 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.masterstack23.R
 import com.example.masterstack23.adapter.BlogAdapter
 import com.example.masterstack23.data.BlogData
-import com.example.masterstack23.data.BlogDataMongo
 import com.example.masterstack23.databinding.FragmentHomeBinding
-import com.mongodb.MongoClient
 
 class HomeFragment : Fragment() {
 

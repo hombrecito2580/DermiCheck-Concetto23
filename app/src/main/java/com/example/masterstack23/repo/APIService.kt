@@ -8,6 +8,8 @@ import com.example.masterstack23.data.LoginRequest
 import com.example.masterstack23.data.LoginResponse
 import com.example.masterstack23.data.StatusResponse
 import com.example.masterstack23.data.UploadTestResponse
+import com.example.masterstack23.data.VerifyTokenRequest
+import com.example.masterstack23.data.VerifyTokenResponse
 import okhttp3.MultipartBody
 import retrofit2.Response
 import retrofit2.http.Body
@@ -25,6 +27,9 @@ interface APIService {
 
     @POST("/login")
     suspend fun login(@Body body: LoginRequest): Response<LoginResponse>
+
+    @POST("/verify-token")
+    suspend fun verifyToken(@Body body: VerifyTokenRequest): Response<VerifyTokenResponse>
 
     @Multipart
     @POST("/uploadTest")

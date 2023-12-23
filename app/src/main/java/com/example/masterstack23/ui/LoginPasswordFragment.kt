@@ -2,13 +2,17 @@ package com.example.masterstack23.ui
 
 import android.annotation.SuppressLint
 import android.app.Dialog
+import android.content.Context
 import android.content.Intent
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
+import android.preference.PreferenceManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.WindowManager
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
@@ -41,9 +45,15 @@ class LoginPasswordFragment : Fragment() {
         dialog = Dialog(requireActivity())
         dialog.setContentView(R.layout.progress_bar)
         dialog.setCancelable(false)
-        if (dialog.window != null) {
-            dialog.window!!.setBackgroundDrawable(ColorDrawable(0))
+        val layoutParams = WindowManager.LayoutParams().apply {
+            width = WindowManager.LayoutParams.MATCH_PARENT
+            height = WindowManager.LayoutParams.MATCH_PARENT
         }
+        dialog.window?.attributes = layoutParams
+        if (dialog.window != null) {
+            dialog.window!!.setBackgroundDrawable(ColorDrawable(ContextCompat.getColor(requireContext(), R.color.white)))
+        }
+        // ColorDrawable(0)
 
         return binding.root
     }
@@ -94,6 +104,11 @@ class LoginPasswordFragment : Fragment() {
                         withContext(Dispatchers.Main) {
                             when(statusMessage) {
                                 "Login successful" -> {
+                                    val sharedPreferences = requireContext().getSharedPreferences("My_Preferences", Context.MODE_PRIVATE)
+                                    val editor = sharedPreferences.edit()
+                                    editor.putString("user_token", response.body()?.token!!)
+                                    editor.apply()
+
                                     dialog.dismiss()
                                     Toast.makeText(context, "User registered successfully", Toast.LENGTH_SHORT).show()
                                     val intent = Intent(context, HomeActivity::class.java)

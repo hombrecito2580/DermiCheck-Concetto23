@@ -2,6 +2,7 @@ package com.example.masterstack23.ui
 
 import android.annotation.SuppressLint
 import android.app.Dialog
+import android.content.Context
 import android.content.Intent
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
@@ -91,6 +92,11 @@ class CreateAccountFragment : Fragment() {
                         withContext(Dispatchers.Main) {
                             when(statusMessage) {
                                 "User registered successfully" -> {
+                                    val sharedPreferences = requireContext().getSharedPreferences("My_Preferences", Context.MODE_PRIVATE)
+                                    val editor = sharedPreferences.edit()
+                                    editor.putString("user_token", response.body()?.token!!)
+                                    editor.apply()
+
                                     dialog.dismiss()
                                     Toast.makeText(context, "User registered successfully", Toast.LENGTH_SHORT).show()
                                     val intent = Intent(context, HomeActivity::class.java)

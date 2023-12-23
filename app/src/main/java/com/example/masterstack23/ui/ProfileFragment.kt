@@ -1,5 +1,7 @@
 package com.example.masterstack23.ui
 
+import android.content.Context
+import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.FileProvider
 import androidx.fragment.app.Fragment
@@ -79,8 +82,21 @@ class ProfileFragment : Fragment() {
 
         }
 
-    }
+        binding.btnLogout.setOnClickListener {
+            val sharedPreferences = requireContext().getSharedPreferences("My_Preferences", Context.MODE_PRIVATE)
 
+            val editor = sharedPreferences.edit()
+            editor.remove("user_token")
+            editor.apply()
+
+            Toast.makeText(context, "Logout successful", Toast.LENGTH_SHORT).show()
+            val intent = Intent(context, LoginActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+            startActivity(intent)
+        }
+    }
 
     private fun createImageUri(): Uri? {
         val image = File(activity?.applicationContext?.filesDir, "camera_photo.png")
